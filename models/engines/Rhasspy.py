@@ -41,7 +41,7 @@ class Rhasspy:
 				if 'mqtt' in conf:
 					try:
 						configs['mqttServer'] = conf['mqtt'].get('host', 'localhost')
-						configs['mqttPort'] = conf['mqtt'].get('port', 12183)
+						configs['mqttPort'] = conf['mqtt'].get('port', 1883)
 						configs['mqttUsername'] = conf['mqtt'].get('username', '')
 						configs['mqttPassword'] = conf['mqtt'].get('password', '')
 						configs['mqttTLSCAFile'] = ''
@@ -53,7 +53,7 @@ class Rhasspy:
 				else:
 					self._logger.warning('\'mqtt\' not present in Rhasspy config file. Attempting to continue with default values.')
 					configs['mqttServer'] = 'localhost'
-					configs['mqttPort'] = 12183
+					configs['mqttPort'] = 1883
 					configs['mqttUsername'] = ''
 					configs['mqttPassword'] = ''
 					configs['mqttTLSCAFile'] = ''
